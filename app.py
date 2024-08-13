@@ -209,7 +209,7 @@ if video_file and doc_file:
     # Convert video to audio (mp3)
     video = mp.VideoFileClip(video_path)
     audio_path = "audio.mp3"
-    video.audio.write_audiofile(audio_path)
+    video.audio.write_audiofile(audio_path, buffersize=4000)
 
     # Recognize speech from the audio
     with open(audio_path, "rb") as audio_file:
